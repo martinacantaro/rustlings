@@ -7,12 +7,10 @@
 
 // I AM NOT DONE
 
-pub fn generate_nametag_text(name: String) -> Option<String> {
-    if name.is_empty() {
-        // Empty names aren't allowed.
-        None
-    } else {
-        Some(format!("Hi! My name is {}", name))
+pub fn generate_nametag_text(name: String) -> Result<String, String> {
+    match name.get(0) {
+        Ok => println!("Hi! My name is {}", x), 
+        Err(error) => panic!(error),
     }
 }
 
