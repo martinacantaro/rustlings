@@ -5,12 +5,11 @@
 // construct to `Option` that can be used to express error conditions. Let's use it!
 // Execute `rustlings hint errors1` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
-
 pub fn generate_nametag_text(name: String) -> Result<String, String> {
-    match name.get(0) {
-        Ok => println!("Hi! My name is {}", x), 
-        Err(error) => panic!(error),
+    if name.is_empty() {
+        Err("`name` was empty; it must be nonempty.".to_string())
+    } else {
+        Ok(format!("Hi! My name is {}", name))
     }
 }
 
